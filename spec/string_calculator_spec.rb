@@ -11,7 +11,19 @@ RSpec.describe StringCalculator, "#add" do
     expect(StringCalculator.add("")).to eql(0)
   end
 
-  it "returns false for when data type is not a string" do
-    expect(StringCalculator.add(2)).to eql(false)
+  it "returns value for when string has a single digit" do
+    (-9..9).each do |digit|
+      expect(StringCalculator.add(digit.to_s)).to eql(digit)
+    end
   end
+
+  it "returns the sum of two digits when seperated by a comma" do
+    expect(StringCalculator.add("1,2")).to eql(3)
+    expect(StringCalculator.add("7,9")).to eql(16)
+  end
+
+  it "returns the sum of two digits when seperated by a comma" do
+    expect(StringCalculator.add("12,45")).to eql(57)
+  end
+
 end
