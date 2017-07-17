@@ -11,5 +11,7 @@ RSpec.describe StringCalculator, "#add" do
     expect(StringCalculator.add("")).to eql(0)
   end
 
-  # more tests go here
+  it "returns false for when data type is not a string" do
+    expect(StringCalculator.add(2)).to eql(false)
+  end
 end

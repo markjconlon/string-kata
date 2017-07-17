@@ -1,7 +1,11 @@
 module StringCalculator
 
   def self.add(string)
-    # code to be tested goes here...
+    if string.class == String
+      string.length
+    else
+      false
+    end
   end
 
   # ...and here when the above becomes too complex.
