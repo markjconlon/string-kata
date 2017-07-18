@@ -33,4 +33,8 @@ RSpec.describe StringCalculator, "#add" do
   it "handles the newline character like commas" do
     expect(StringCalculator.add("1\n2,3")).to eql(6)
   end
+
+  it "allows the delimiter to be set" do
+    expect(StringCalculator.add("//;\n2;5")).to eql(7)
+  end
 end
