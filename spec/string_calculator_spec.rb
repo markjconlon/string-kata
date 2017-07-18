@@ -26,4 +26,7 @@ RSpec.describe StringCalculator, "#add" do
     expect(StringCalculator.add("12,45")).to eql(57)
   end
 
+  it "returns the sum of strings of digits regardless of number of digits and commas" do
+    expect(StringCalculator.add("12,9,100")).to eql(121)
+  end
 end
